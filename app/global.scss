@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    color: rgb(13, 12, 14);
+}
+
+@layer components {
+    .newsCard {
+        border-left: 6px solid;
+        padding: 8px;
+        margin: 10px;
+
+        .cardTitle {
+            padding: 4px;
+            font-size: 18pt;
+            border-bottom: 2px solid;
+        }
+
+        .cardContent {
+            font-size: 14pt;
+            padding: 10px 4px 10px 4px;
+        }
+    }
+
+    .red {
+        .newsCard {
+            border-left-color: red;
+        }
+
+        .cardTitle {
+            border-bottom-color: red;
+        }
+    }
+
+    .blue {
+        .newsCard {
+            border-left-color: blue;
+        }
+
+        .cardTitle {
+            border-bottom-color: blue;
+        }
+    }
+
+    .hamburger_btn {
+        width: 50px;
+        height: 50px;
+
+        div {
+            transition: opacity 300ms linear;
+        }
+
+        div:first-child {
+            opacity: 1;
+            height: 50px;
+
+            &.active {
+                opacity: 0;
+            }
+        }
+
+        div:last-child {
+            opacity: 0;
+            height: 50px;
+
+            &.active {
+                opacity: 1;
+            }
+
+            margin-top: -50px;
+        }
+
+
+
+
+    }
+
+    .hamburger_container {
+        position: absolute;
+        right: -320px;
+        top: 50px;
+
+        transition: right 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        &.active {
+            right: 0;
+        }
+
+        /*height: calc(100vh - 50px);*/
+        width: 320px;
+
+        ul {
+            padding: 0 4px;
+        }
+
+        li {
+            border-bottom: 1px dashed rgb(87, 38, 217);
+            padding: 4px;
+        }
+
+        li:last-child {
+            border: 0;
+        }
+    }
+
+
+}
